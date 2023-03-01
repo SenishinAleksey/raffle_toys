@@ -22,7 +22,7 @@ public class ToysCollection {
     }
 
     public String getPrize() {
-        if (this.collection.isEmpty()) {
+        if (!this.isPrizesAvailable()) {
             return "Призы закончились";
         }
         int weightsSum = 0;
