@@ -11,13 +11,15 @@ public class Main {
         toysCollection.addToy("Танк", 11, 30);
         toysCollection.addToy("Конструктор", 20, 5);
 
-        while (toysCollection.isPrizesAvailable()) {
-            try (FileWriter writer = new FileWriter("prizes.txt", true)) {
+
+        try (FileWriter writer = new FileWriter("prizes.txt", false)) {
+            while (toysCollection.isPrizesAvailable()) {
                 writer.write(toysCollection.getPrize() + '\n');
-                writer.flush();
-            } catch (IOException ex) {
-                System.out.println(ex.getMessage());
             }
+            writer.flush();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
         }
     }
+
 }
