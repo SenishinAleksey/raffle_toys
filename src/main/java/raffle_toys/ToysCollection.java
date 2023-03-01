@@ -10,10 +10,11 @@ public class ToysCollection {
         this.collection = new HashMap<>();
     }
 
-    public void addToy(String name, int quantity, int weight) {
+    public int addToy(String name, int quantity, int weight) {
         Toy toy = new Toy(this.toyId, name, quantity, weight);
         this.collection.put(this.toyId, toy);
         this.toyId++;
+        return toy.id;
     }
 
     public void changeToyWeight(int id, int weight) {

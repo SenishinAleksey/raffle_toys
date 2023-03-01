@@ -7,10 +7,11 @@ public class Main {
     public static void main(String[] args) {
         ToysCollection toysCollection = new ToysCollection();
         toysCollection.addToy("Машинка", 10, 20);
-        toysCollection.addToy("Кукла", 5, 15);
+        int dollId = toysCollection.addToy("Кукла", 5, 15);
         toysCollection.addToy("Танк", 11, 30);
         toysCollection.addToy("Конструктор", 20, 5);
 
+        toysCollection.changeToyWeight(dollId, 50);
 
         try (FileWriter writer = new FileWriter("prizes.txt", false)) {
             while (toysCollection.isPrizesAvailable()) {
